@@ -2,7 +2,7 @@ export const getProducts = (req, res) => res.send(jsonContent);
 
 const responseData = {
     Message: "productos!!!",
-    Puto: "Javier"
+    Puto: "Juan"
 }
 
 const jsonContent = JSON.stringify(responseData);
