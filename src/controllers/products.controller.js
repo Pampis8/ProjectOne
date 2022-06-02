@@ -34,7 +34,7 @@ export const createNewProduct = async (req, res) => {
             .input("id", sql.Int, id)
             .input("Name", sql.VarChar, Name)
             .input("Quantity", sql.Int, Quantity)
-            .query(queries.addNewProduct)
+            .query(productsQuerys.addNewProduct)
 
         res.json({ id, Name, Quantity })
     } catch (error) {
