@@ -1,24 +1,24 @@
-import sql from 'mssql'
+import sql from "mssql";
+import config from "../config";
 
 const dbSettings = {
-    user : "sa",
-    password: "Passw0rd",
-    server: "localhost" ,
-    database: "webstore",
+    user: config.dbUser,
+    password: config.dbPassword,
+    server: config.dbServer,
+    database: config.dbDatabase,
     options: {
         encrypt: true,
         trustServerCertificate: true,
     },
 };
 
-async function getConnection() {
+export const getConnection = async () => {
     try {
         const pool = await sql.connect(dbSettings);
         return pool;
     } catch (error) {
-    console.error(error);
+        console.error(error);
     }
-}
-    
+};
 
-getConnection();
+export { sql };
